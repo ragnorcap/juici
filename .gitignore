@@ -38,5 +38,5 @@ yarn-error.log*
 # Nested directory
 /ideagen/ 
 
-#SUPABASE CONFIG
-/Users/acetwotimes/ideagen/supabase_setup.sql
+# Supabase
+supabase_setup.sql
