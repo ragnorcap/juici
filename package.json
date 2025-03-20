@@ -2,11 +2,14 @@
   "name": "juici",
   "version": "1.0.0",
   "description": "AI-powered idea generator with PRD creation",
-  "main": "index.js",
+  "main": "backend/src/index.ts",
   "type": "module",
+  "engines": {
+    "node": "18.x"
+  },
   "scripts": {
-    "start": "node backend/dist/index.js",
-    "build": "tsc -p backend/tsconfig.json",
+    "start": "ts-node --transpile-only backend/src/index.ts",
+    "build": "cd frontend && npm install && npm run build",
     "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
     "dev:backend": "cd backend && npm run dev",
     "dev:frontend": "cd frontend && npm start",
