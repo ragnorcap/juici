@@ -4,7 +4,7 @@
 
 A vibrant, juice-themed idea generator that helps developers and creatives overcome analysis paralysis by providing project inspiration.
 
-![Juici App Screenshot](https://via.placeholder.com/800x400?text=Juici+App+Screenshot)
+<img width="1440" alt="Screenshot 2025-03-19 at 8 48 10 PM" src="https://github.com/user-attachments/assets/771bc946-86e6-4824-97aa-85396c4af473" />
 
 ## Features
 
