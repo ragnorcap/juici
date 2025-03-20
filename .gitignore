@@ -33,4 +33,10 @@ yarn-error.log*
 .vscode
 
 # backup files
-*.bak 
+*.bak
+
+# Nested directory
+/ideagen/ 
+
+#SUPABASE CONFIG
+/Users/acetwotimes/ideagen/supabase_setup.sql
