@@ -37,6 +37,15 @@ jobs:
           cd frontend
           npm run build
           
+      - name: Debug build output
+        run: |
+          echo "Listing build directory contents:"
+          ls -la frontend/build
+          echo "Checking for CSS files:"
+          find frontend/build -name "*.css"
+          echo "Checking for JS files:"
+          find frontend/build -name "*.js"
+          
       - name: Setup Pages
         uses: actions/configure-pages@v3
         

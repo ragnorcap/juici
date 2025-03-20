@@ -2,7 +2,7 @@
   "name": "juici",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://juici.space",
+  "homepage": ".",
   "dependencies": {
     "@craco/craco": "^7.1.0",
     "@supabase/supabase-js": "^2.49.1",

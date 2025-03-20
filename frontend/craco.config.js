@@ -11,6 +11,9 @@ module.exports = {
           url: require.resolve('url/'),
         },
       },
+      output: {
+        publicPath: './',
+      },
     },
   },
 }; 
