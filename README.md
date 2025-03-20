@@ -16,7 +16,7 @@ A vibrant, juice-themed idea generator that helps developers and creatives overc
 
 ## Live Demo
 
-Visit [juici.dev](https://juici.dev) to see the live application.
+Visit [juici.space](https://juici.space) to see the live application.
 
 ## Tech Stack
 
