@@ -4,15 +4,17 @@
 
 A vibrant, juice-themed idea generator that helps developers and creatives overcome analysis paralysis by providing project inspiration.
 
-<img width="1440" alt="Screenshot 2025-03-19 at 8 48 10 PM" src="https://github.com/user-attachments/assets/771bc946-86e6-4824-97aa-85396c4af473" />
+<img width="1440" alt="Juici App Screenshot" src="https://github.com/user-attachments/assets/771bc946-86e6-4824-97aa-85396c4af473" />
 
 ## Features
 
-- Generates random project ideas from a curated list of 50 prompts
-- Create professional-grade Product Requirements Documents (PRDs) with AI
-- Fresh, modern UI with a juice theme (purple, green, and yellow color scheme)
-- Animated hero section with liquid animations
-- Copy-to-clipboard functionality for easy use
+- ✨ Generates random project ideas from a curated list of 50 prompts
+- 📝 Creates professional-grade Product Requirements Documents (PRDs) with AI
+- 🎨 Fresh, modern UI with a juice theme (purple, green, and yellow color scheme)
+- 💧 Animated hero section with liquid animations and bubble effects
+- 📋 Copy-to-clipboard functionality for easy use
+- 🔐 User authentication through Supabase to save favorite ideas
+- 💾 Store and manage your favorite project ideas
 
 ## Live Demo
 
@@ -21,9 +23,11 @@ Visit [juici.space](https://juici.space) to see the live application.
 ## Tech Stack
 
 - **Frontend**: React with TypeScript, Styled Components, Framer Motion for animations
-- **Backend**: Node.js with Express
+- **Backend**: Node.js with Express, TypeScript
+- **Database**: Supabase for authentication and data storage
 - **Data**: Static JSON file containing 50 creative project prompts
 - **AI Integration**: OpenAI API for generating detailed PRDs
+- **Deployment**: Vercel for hosting the full-stack application
 
 ## Getting Started
 
@@ -32,41 +36,59 @@ Visit [juici.space](https://juici.space) to see the live application.
 - Node.js (v14 or newer)
 - npm or yarn
 - OpenAI API key
+- Supabase account and project
 
 ### Environment Setup
 
 1. Clone this repository
    ```
-   git clone https://github.com/yourusername/juici.git
+   git clone https://github.com/ragnorcap/juici.git
    cd juici
    ```
 
 2. Set up environment variables
    ```
-   cd backend
    cp .env.example .env
    ```
    
-3. Edit the `.env` file and add your OpenAI API key
+3. Edit the `.env` file and add your API keys
    ```
    OPENAI_API_KEY=your_openai_api_key_here
+   SUPABASE_URL=your_supabase_url_here
+   SUPABASE_KEY=your_supabase_anon_key_here
+   SUPABASE_SECRET=your_supabase_service_role_key_here
    ```
 
 ### Installing Dependencies
 
-#### Backend
 ```
-cd backend
+# Install root dependencies
 npm install
-```
 
-#### Frontend
-```
+# Install frontend dependencies
 cd frontend
 npm install
+cd ..
+
+# Install backend dependencies
+cd backend
+npm install
+cd ..
 ```
 
 ### Running Locally
+
+The easiest way to run the project locally is using the provided script:
+
+```
+npm run dev
+```
+
+This will concurrently run:
+- Backend: http://localhost:5555
+- Frontend: http://localhost:3000
+
+Alternatively, you can run them separately:
 
 #### Backend
 ```
@@ -80,38 +102,44 @@ cd frontend
 npm start
 ```
 
-The application will be available at http://localhost:3000
-
 ## Deployment
 
-### GitHub Pages Deployment
+### Vercel Deployment
 
-This project is set up to deploy to GitHub Pages using GitHub Actions. When you push to the main branch, it will automatically deploy to your custom domain (if configured).
+This project is configured for deployment on Vercel:
 
-### Custom Domain Setup
+1. Push your code to GitHub
+2. Connect your repository to Vercel
+3. Configure the following build settings:
+   - **Framework Preset**: Create React App
+   - **Build Command**: `npm run build`
+   - **Output Directory**: `frontend/build`
+   - **Install Command**: `npm install`
+4. Add environment variables in the Vercel dashboard:
+   - `OPENAI_API_KEY`
+   - `SUPABASE_URL`
+   - `SUPABASE_KEY`
+   - `SUPABASE_SECRET`
+5. Deploy and configure your custom domain if desired
 
-1. In your DNS provider, add an A record pointing to GitHub Pages IP addresses:
-   ```
-   185.199.108.153
-   185.199.109.153
-   185.199.110.153
-   185.199.111.153
-   ```
+## Project Structure
 
-2. Also add a CNAME record:
-   ```
-   Name: www or subdomain
-   Value: yourusername.github.io
-   ```
-
-3. Make sure the CNAME file is in the `frontend/public` directory with your domain name.
-
-## Environment Variables
-
-To run this project, you need to set up the following environment variables in a `.env` file in the backend directory:
-
-- `OPENAI_API_KEY`: Your OpenAI API key for generating PRDs
-- `PORT` (optional): The port number for the backend server (defaults to 5555)
+```
+juici/
+├── .github/            # GitHub Actions workflows
+├── backend/            # Express backend
+│   ├── src/            # TypeScript source files
+│   │   ├── index.ts    # Main server file
+│   │   └── lib/        # Backend libraries
+├── data/               # Data files
+│   └── prompts.json    # Project idea prompts
+├── frontend/           # React frontend
+│   ├── public/         # Static files
+│   └── src/            # React components and styles
+├── .env.example        # Example environment variables
+├── vercel.json         # Vercel deployment configuration
+└── package.json        # Root package.json for scripts
+```
 
 ## Contributing
 
@@ -129,4 +157,5 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 - Inspired by the challenge of overcoming creative blocks
 - OpenAI for providing the API that powers the PRD generation
-- The React community for the tools and libraries that make this possible 
+- The React community for the tools and libraries that make this possible
+- Supabase for the authentication and database services
